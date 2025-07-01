@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 1 - JS Core Concepts</title>
+    <!-- Init Tailwind css -->
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-slate-500 h-screen flex justify-center items-center text-white p-6">
+   
+  </body>
+
+  <script>
+    console.log("✅ Internal JavaScript is working!");
+
+    // 1️⃣ Variables in JS
+    let name = "Rahul";
+    const age = 20;
+    var city = "Pune";
+    console.log("Name:", name);
+    console.log("Age:", age);
+    console.log("City:", city);
+
+    // 2️⃣ Data Types
+    let isStudent = true; // Boolean
+    let marks = 89.5;     // Number
+    let course = null;    // Null
+    let address;          // Undefined
+    console.log("Is Student:", isStudent);
+    console.log("Marks:", marks);
+    console.log("Course:", course);
+    console.log("Address:", address);
+
+    // Functions
+    function greet() {
+      console.log("Hello! This is a function.");
+    }
+    greet();
+
+    //  Conditional Statements
+    if (age >= 18) {
+      console.log("You are an adult.");
+    } else {
+      console.log("You are a minor.");
+    }
+
+    //  Loops
+    for (let i = 1; i <= 3; i++) {
+      console.log("Loop count:", i);
+    }
+
+    // 6️ Arrays
+    let fruits = ["Apple", "Banana", "Mango"];
+    console.log("Fruits Array:", fruits);
+    console.log("First Fruit:", fruits[0]);
+
+    // 7️ Objects
+    let person = {
+      name: "Amit",
+      age: 25,
+      city: "Mumbai"
+    };
+    console.log("Person Object:", person);
+    console.log("Person Name:", person.name);
+    //array
+    let numbers = [1, 2, 3, 4, 5];
+    console.log("Numbers Array:", numbers);
+    console.log("First Number:", numbers[0]);
+
+    // 8️ Events (basic)
+    document.body.addEventListener("click", function () {
+      alert("Body clicked!");
+    });
+
+    // 🎉 All done!
+  </script>
+</html>
