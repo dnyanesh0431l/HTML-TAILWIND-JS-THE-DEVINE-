@@ -10,6 +10,7 @@ This is the first lecture of our Web Development series. It introduces the basic
 > Click anywhere on the page to trigger a simple event!
 
 ---
+
 # 🧠 What is JavaScript?
 
 **JavaScript** is a powerful, high-level programming language that brings **life and interactivity** to websites. It runs directly in your browser and lets you:
@@ -24,22 +25,10 @@ This is the first lecture of our Web Development series. It introduces the basic
 
 ---
 
-# 🚀 Day 1 - JavaScript Core Concepts (with Tailwind CSS)
-
-This is the first lecture of our Web Development series. It introduces the basics of **JavaScript** along with **Tailwind CSS** styling. The project includes a simple web page with a background image and several core JS concepts demonstrated in the console.
-
----
-
-## 🌐 Live Preview
-
-> Right-click → Inspect → Console tab to see JavaScript in action.  
-> Click anywhere on the page to trigger a simple event!
-
----
-
 ## 📚 Topics Covered
 
 ### ✅ JavaScript Concepts
+
 1. **Variables** – `let`, `const`, `var`
 2. **Data Types** – `string`, `number`, `boolean`, `undefined`, `null`
 3. **Functions** – Simple function declaration and usage
