@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Day 2 - JS Objects & Methods</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white min-h-screen flex flex-col items-center justify-center p-6 space-y-4">
+  <h1 class="text-3xl font-bold text-yellow-400">🧠 JavaScript Objects & Methods</h1>
+  <button onclick="runExamples()" class="bg-green-600 hover:bg-green-700 px-4 py-2 rounded text-white font-semibold">▶️ Run Examples (Check Console)</button>
+
+  <script>
+    function runExamples() {
+      console.clear();
+      console.log("✅ JavaScript Object Concepts:");
+
+      // 1. Creating an object
+      let person = {
+        name: "Krishna",
+        age: 19,
+        city: "Delhi"
+      };
+      console.log("Person:", person);
+
+      // 2. Accessing properties
+      console.log("Name (dot):", person.name);
+      console.log("City (bracket):", person["city"]);
+
+      // 3. Modifying values
+      person.age = 20;
+      person["city"] = "Mumbai";
+      console.log("Updated Person:", person);
+
+      // 4. Adding new property
+      person.email = "krishna@email.com";
+      console.log("After adding email:", person);
+
+      // 5. Deleting a property
+      delete person.email;
+      console.log("After deleting email:", person);
+
+      // 6. Loop through object
+      console.log("Looping through person:");
+      for (let key in person) {
+        console.log(`${key}: ${person[key]}`);
+      }
+
+      // 7. Nested Object
+      let student = {
+        name: "Radha",
+        address: {
+          city: "Pune",
+          zip: 411001
+        }
+      };
+      console.log("Student City:", student.address.city);
+
+      // 8. Array of Objects
+      let users = [
+        { name: "Ram", age: 22 },
+        { name: "Shyam", age: 25 }
+      ];
+      console.log("Users[0] Name:", users[0].name);
+
+      // 9. Object with method
+      let user = {
+        name: "Karan",
+        greet: function () {
+          console.log("Hello, " + this.name);
+        }
+      };
+      user.greet();
+
+      // 10. Shorthand method syntax
+      let car = {
+        brand: "Toyota",
+        start() {
+          console.log(this.brand + " is starting...");
+        }
+      };
+      car.start();
+
+      // 11. this keyword example
+      let laptop = {
+        brand: "HP",
+        model: "Pavilion",
+        showDetails() {
+          console.log(`Laptop: ${this.brand} ${this.model}`);
+        }
+      };
+      laptop.showDetails();
+
+      console.log("🎉 All object concepts demonstrated!");
+    }
+  </script>
+</body>
+</html>
