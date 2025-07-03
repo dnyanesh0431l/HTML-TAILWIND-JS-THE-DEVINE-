@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Day 3 - JavaScript String Methods</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white min-h-screen flex flex-col items-center justify-center p-6 space-y-4">
+  <h1 class="text-3xl font-bold text-white">JavaScript - Top 8 String Methods</h1>
+  <button onclick="runExamples()" class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded text-white font-semibold">
+    Run Examples (Check Console)
+  </button>
+
+  <script>
+    function runExamples() {
+      console.clear();
+
+      // Starting string
+      let message = "  Hello JavaScript!  ";
+      console.log("Original String:", `"${message}"`);
+
+      // 1. trim() - removes extra spaces from beginning and end
+      let trimmed = message.trim();
+      console.log("\n1. trim() - Removes extra spaces from both ends");
+      console.log("Before:", `"${message}"`);
+      console.log("After :", `"${trimmed}"`);
+
+      // 2. toUpperCase() - converts all characters to uppercase
+      console.log("\n2. toUpperCase() - Converts the string to uppercase");
+      console.log("Result:", trimmed.toUpperCase());
+
+      // 3. toLowerCase() - converts all characters to lowercase
+      console.log("\n3. toLowerCase() - Converts the string to lowercase");
+      console.log("Result:", trimmed.toLowerCase());
+
+      // 4. includes() - checks if a substring exists inside the string
+      console.log("\n4. includes('Java') - Checks if 'Java' is in the string");
+      console.log("Result:", trimmed.includes("Java"));
+
+      // 5. slice(start, end) - extracts a part of the string from start to end index
+      console.log("\n5. slice(0, 5) - Cuts a portion of the string from index 0 to 5 (not including 5)");
+      console.log("Result:", trimmed.slice(0, 5));
+
+      // 6. replace(find, replaceWith) - replaces first matching part with new value
+      console.log("\n6. replace('JavaScript', 'World') - Replaces 'JavaScript' with 'World'");
+      console.log("Result:", trimmed.replace("JavaScript", "World"));
+
+      // 7. split(separator) - splits the string into an array using the given separator
+      console.log("\n7. split(' ') - Splits the string by spaces into an array");
+      console.log("Result:", trimmed.split(" "));
+
+      // 8. length - returns the number of characters in the string
+      console.log("\n8. length - Returns the number of characters in the string");
+      console.log("Result:", trimmed.length);
+
+      console.log("\nAll 8 string methods have been demonstrated.");
+    }
+  </script>
+</body>
+</html>
