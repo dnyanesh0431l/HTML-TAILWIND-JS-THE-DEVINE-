@@ -2,122 +2,105 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="bg-gray-600 flex flex-col items-center justify-center h-screen">
-    <div class="bg-slate-950 flex flex-col p-4">
-        <input type="text" disabled class="text-white text-right bg-slate-950 text-2xl" id="input">
-        <div class="grid grid-cols-4 gap-2 mt-4  ">
-            <div  class="bg-slate-700 rounded-full text-white text-xl h-10 items-center justify-center flex  w-10 "
-                id="1">
-                <h1>AC</h1>
-            </div>
-            <div onclick="backspace()" class="bg-slate-700 rounded-full text-white text-xl h-10 items-center justify-center flex  w-10 "
-                id="1">
-                <h1>X</h1>
-            </div>
-            <div onclick="append('%')" class="bg-slate-700 rounded-full text-white text-xl h-10 items-center justify-center flex  w-10 "
-                id="1">
-                <h1>%</h1>
-            </div>
-            <div onclick="append('/')" class="bg-slate-700 rounded-full text-white text-xl h-10 items-center justify-center flex  w-10 "
-                id="1">
-                <h1>/</h1>
-            </div>
-            <div onclick="append('7')" class="bg-slate-700 rounded-full text-white text-xl h-10 items-center justify-center flex  w-10 "
-                id="1">
-                <h1>7</h1>
-            </div>
-            <div onclick="append('8')" class="bg-slate-700 rounded-full text-white text-xl h-10 items-center justify-center flex  w-10 "
-                id="1">
-                <h1>8</h1>
-            </div>
-            <div onclick="append('9')" class="bg-slate-700 rounded-full text-white text-xl h-10 items-center justify-center flex  w-10 "
-                id="1">
-                <h1>9</h1>
-            </div>
-            <div onclick="append('*')"   class="bg-slate-700 rounded-full text-white text-xl h-10 items-center justify-center flex  w-10 "
-                id="1">
-                <h1>*</h1>
-            </div>
-            <div onclick="append('4')" class="bg-slate-700 rounded-full text-white text-xl h-10 items-center justify-center flex  w-10 "
-                id="1">
-                <h1>4</h1>
-            </div>
-            <div onclick="append('5')" class="bg-slate-700 rounded-full text-white text-xl h-10 items-center justify-center flex  w-10 "
-                id="1">
-                <h1>5</h1>
-            </div>
-            <div    onclick="append('6')" class="bg-slate-700 rounded-full text-white text-xl h-10 items-center justify-center flex  w-10 "
-                id="1">
-                <h1>6</h1>
-            </div>
-            <div onclick="append('-')" class="bg-slate-700 rounded-full text-white text-xl h-10 items-center justify-center flex  w-10 "
-                id="1">
-                <h1>-</h1>
-            </div>
-            <div onclick="append('1')" class="bg-slate-700 rounded-full text-white text-xl h-10 items-center justify-center flex  w-10 "
-                id="1">
-                <h1>1</h1>
-            </div>
-            <div onclick="append('2')" class="bg-slate-700 rounded-full text-white text-xl h-10 items-center justify-center flex  w-10 "
-                id="1">
-                <h1>2</h1>
-            </div>
-            <div onclick="append('3')" class="bg-slate-700 rounded-full text-white text-xl h-10 items-center justify-center flex  w-10 "
-                id="1">
-                <h1>3</h1>
-            </div>
-            <div onclick="append('+')" class="bg-slate-700 rounded-full text-white text-xl h-10 items-center justify-center flex  w-10 "
-                id="1">
-                <h1>+</h1>
-            </div>
+<body class="bg-blue-300 flex justify-center items-center h-screen">
+  <div class="bg-slate-950 flex flex-col p-4 rounded-lg">
+    <input disabled class="bg-slate-950 text-slate-100" type="text" name="" id="heading">
+    <div class="grid grid-cols-4 gap-2 mt-2">
+      <div onclick="clear1()" class="bg-slate-300 h-10 w-10 flex items-center justify-center rounded-full">
+        <h1 class="font-bold">AC</h1>
+      </div>
+      <div onclick="backspace()" class="bg-slate-300 h-10 w-10 flex items-center justify-center rounded-full">
+        <h1 class="font-bold">DEL</h1>
+      </div>
+      <div onclick="add('%')" class="bg-slate-300 h-10 w-10 flex items-center justify-center rounded-full">
+        <h1 class="font-bold">%</h1>
+      </div>
+      <div onclick="add('/')" class="bg-slate-300 h-10 w-10 flex items-center justify-center rounded-full">
+        <h1 class="font-bold">/</h1>
+      </div>
+      <div onclick="add('7')" class="bg-slate-300 h-10 w-10 flex items-center justify-center rounded-full">
+        <h1 class="font-bold">7</h1>
+      </div>
+      <div onclick="add('8')" class="bg-slate-300 h-10 w-10 flex items-center justify-center rounded-full">
+        <h1 class="font-bold">8</h1>
+      </div>
+      <div onclick="add('9')" class="bg-slate-300 h-10 w-10 flex items-center justify-center rounded-full">
+        <h1 class="font-bold">9</h1>
+      </div>
+      <div onclick="add('*')" class="bg-slate-300 h-10 w-10 flex items-center justify-center rounded-full">
+        <h1 class="font-bold">*</h1>
+      </div>
+      <div onclick="add('4')" class="bg-slate-300 h-10 w-10 flex items-center justify-center rounded-full">
+        <h1 class="font-bold">4</h1>
+      </div>
+      <div onclick="add('5')" class="bg-slate-300 h-10 w-10 flex items-center justify-center rounded-full">
+        <h1 class="font-bold">5</h1>
+      </div>
+      <div onclick="add('6')" class="bg-slate-300 h-10 w-10 flex items-center justify-center rounded-full">
+        <h1 class="font-bold">6</h1>
+      </div>
+      <div onclick="add('-')" class="bg-slate-300 h-10 w-10 flex items-center justify-center rounded-full">
+        <h1 class="font-bold">-</h1>
+      </div>
+      <div onclick="add('1')" class="bg-slate-300 h-10 w-10 flex items-center justify-center rounded-full">
+        <h1 class="font-bold">1</h1>
+      </div>
+      <div onclick="add('2')" class="bg-slate-300 h-10 w-10 flex items-center justify-center rounded-full">
+        <h1 class="font-bold">2</h1>
+      </div>
+      <div onclick="add('3')" class="bg-slate-300 h-10 w-10 flex items-center justify-center rounded-full">
+        <h1 class="font-bold">3</h1>
+      </div>
+      <div onclick="add('+')" class="bg-slate-300 h-10 w-10 flex items-center justify-center rounded-full">
+        <h1 class="font-bold">+</h1>
+      </div>
 
-
-        </div>
-        <div class="flex flex-row gap-8 mt-2">
-            <div  class="flex flex-row gap-8 ">
-                <div onclick="append('0')" class="bg-slate-700 rounded-full text-white text-xl h-10 items-center justify-center flex  w-10 "
-                    id="1">
-                    <h1>0</h1>
-                </div>
-                <div onclick="append('.')" class="bg-slate-700 rounded-full text-white text-xl h-10 items-center justify-center flex  w-10 "
-                    id="1">
-                    <h1>.</h1>
-                </div>
-            </div>
-
-            <div class="w-full pr-6">
-                <div onclick="calculate()" class="bg-slate-700 rounded-full text-white text-xl h-10 items-center justify-center flex  w-full "
-                    id="1">
-                    <h1>=</h1>
-                </div>
-            </div>
-        </div>
     </div>
+    <div class="flex flex-row gap-2 w-full  mt-2">
+      <div class="w-1/2">
+        <div onclick="add('0')" class="bg-slate-300 h-10 w-full flex items-center justify-center rounded-full">
+          <h1 class="font-bold">0</h1>
+        </div>
+
+      </div>
+      <div class="flex flex-row gap-2 w-1/2 ">
+        <div onclick="add('.')" class="bg-slate-300 h-10 w-10 flex items-center justify-center rounded-full">
+          <h1 class="font-bold">.</h1>
+        </div>
+        <div onclick="calculate()" class="bg-slate-300 h-10 w-10 flex items-center justify-center rounded-full">
+          <h1 class="font-bold">=</h1>
+        </div>
+
+      </div>
+    </div>
+  </div>
 
 </body>
 <script>
-    function append(value) {
-        document.getElementById("input").value += value;
-    }
-    function calculate() {
-        let input = document.getElementById("input").value;
-        let result = eval(input);
-        document.getElementById("input").value = result;
-    }
-    function clear1() {
-        console.log("clear");
-        document.getElementById("input").value = "";
-    }
-    function backspace() {
-        let input = document.getElementById("input").value;
-        document.getElementById("input").value = input.slice(0, -1);
-    }
+  function add(a) {
+    heading = document.getElementById('heading');
+    heading.value += a;
+
+
+  }
+  function calculate() {
+    let heading = document.getElementById('heading')
+    heading.value = eval(heading.value)
+  }
+  function clear1(){
+    document.getElementById('heading').value = "";  
+  }
+  function backspace(){
+   let heading = document.getElementById('heading'); 
+   heading.value = heading.value.slice(0,-1);
+
+  }
 </script>
 
 </html>
