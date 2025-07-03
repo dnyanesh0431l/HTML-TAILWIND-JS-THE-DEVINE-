@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-600 flex flex-col items-center justify-center h-screen">
+    <div class="bg-slate-950 flex flex-col p-4">
+        <input type="text" disabled class="text-white text-right bg-slate-950 text-2xl" id="input">
+        <div class="grid grid-cols-4 gap-2 mt-4  ">
+            <div  class="bg-slate-700 rounded-full text-white text-xl h-10 items-center justify-center flex  w-10 "
+                id="1">
+                <h1>AC</h1>
+            </div>
+            <div onclick="backspace()" class="bg-slate-700 rounded-full text-white text-xl h-10 items-center justify-center flex  w-10 "
+                id="1">
+                <h1>X</h1>
+            </div>
+            <div onclick="append('%')" class="bg-slate-700 rounded-full text-white text-xl h-10 items-center justify-center flex  w-10 "
+                id="1">
+                <h1>%</h1>
+            </div>
+            <div onclick="append('/')" class="bg-slate-700 rounded-full text-white text-xl h-10 items-center justify-center flex  w-10 "
+                id="1">
+                <h1>/</h1>
+            </div>
+            <div onclick="append('7')" class="bg-slate-700 rounded-full text-white text-xl h-10 items-center justify-center flex  w-10 "
+                id="1">
+                <h1>7</h1>
+            </div>
+            <div onclick="append('8')" class="bg-slate-700 rounded-full text-white text-xl h-10 items-center justify-center flex  w-10 "
+                id="1">
+                <h1>8</h1>
+            </div>
+            <div onclick="append('9')" class="bg-slate-700 rounded-full text-white text-xl h-10 items-center justify-center flex  w-10 "
+                id="1">
+                <h1>9</h1>
+            </div>
+            <div onclick="append('*')"   class="bg-slate-700 rounded-full text-white text-xl h-10 items-center justify-center flex  w-10 "
+                id="1">
+                <h1>*</h1>
+            </div>
+            <div onclick="append('4')" class="bg-slate-700 rounded-full text-white text-xl h-10 items-center justify-center flex  w-10 "
+                id="1">
+                <h1>4</h1>
+            </div>
+            <div onclick="append('5')" class="bg-slate-700 rounded-full text-white text-xl h-10 items-center justify-center flex  w-10 "
+                id="1">
+                <h1>5</h1>
+            </div>
+            <div    onclick="append('6')" class="bg-slate-700 rounded-full text-white text-xl h-10 items-center justify-center flex  w-10 "
+                id="1">
+                <h1>6</h1>
+            </div>
+            <div onclick="append('-')" class="bg-slate-700 rounded-full text-white text-xl h-10 items-center justify-center flex  w-10 "
+                id="1">
+                <h1>-</h1>
+            </div>
+            <div onclick="append('1')" class="bg-slate-700 rounded-full text-white text-xl h-10 items-center justify-center flex  w-10 "
+                id="1">
+                <h1>1</h1>
+            </div>
+            <div onclick="append('2')" class="bg-slate-700 rounded-full text-white text-xl h-10 items-center justify-center flex  w-10 "
+                id="1">
+                <h1>2</h1>
+            </div>
+            <div onclick="append('3')" class="bg-slate-700 rounded-full text-white text-xl h-10 items-center justify-center flex  w-10 "
+                id="1">
+                <h1>3</h1>
+            </div>
+            <div onclick="append('+')" class="bg-slate-700 rounded-full text-white text-xl h-10 items-center justify-center flex  w-10 "
+                id="1">
+                <h1>+</h1>
+            </div>
+
+
+        </div>
+        <div class="flex flex-row gap-8 mt-2">
+            <div  class="flex flex-row gap-8 ">
+                <div onclick="append('0')" class="bg-slate-700 rounded-full text-white text-xl h-10 items-center justify-center flex  w-10 "
+                    id="1">
+                    <h1>0</h1>
+                </div>
+                <div onclick="append('.')" class="bg-slate-700 rounded-full text-white text-xl h-10 items-center justify-center flex  w-10 "
+                    id="1">
+                    <h1>.</h1>
+                </div>
+            </div>
+
+            <div class="w-full pr-6">
+                <div onclick="calculate()" class="bg-slate-700 rounded-full text-white text-xl h-10 items-center justify-center flex  w-full "
+                    id="1">
+                    <h1>=</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script>
+    function append(value) {
+        document.getElementById("input").value += value;
+    }
+    function calculate() {
+        let input = document.getElementById("input").value;
+        let result = eval(input);
+        document.getElementById("input").value = result;
+    }
+    function clear1() {
+        console.log("clear");
+        document.getElementById("input").value = "";
+    }
+    function backspace() {
+        let input = document.getElementById("input").value;
+        document.getElementById("input").value = input.slice(0, -1);
+    }
+</script>
+
+</html>
