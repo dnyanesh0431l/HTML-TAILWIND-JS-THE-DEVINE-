@@ -1,95 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>JS Methods with Tailwind</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-  </head>
-  <body class="bg-gray-100 min-h-screen p-8">
-    <div class="max-w-2xl mx-auto bg-white shadow-md rounded-xl p-6">
-      <h2 class="text-2xl font-bold mb-6 text-center text-indigo-600">🎯 JavaScript Methods Demo</h2>
+<head>
+  <meta charset="UTF-8">
+  <title>map() with Tailwind</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
 
-      <!-- Buttons Grid -->
-      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
-        <button onclick="useMap()" class="btn">map()</button>
-        <button onclick="useFilter()" class="btn">filter()</button>
-        <button onclick="useForEach()" class="btn">forEach()</button>
-        <button onclick="useFind()" class="btn">find()</button>
-        <button onclick="useIncludes()" class="btn">includes()</button>
-        <button onclick="usePush()" class="btn">push()</button>
-        <button onclick="usePop()" class="btn">pop()</button>
-        <button onclick="useSort()" class="btn">sort()</button>
-      </div>
+  <div class="bg-white p-6 rounded-xl shadow-md max-w-md w-full text-center">
+    <h2 class="text-2xl font-bold text-indigo-600 mb-4">🍕 Product Names</h2>
 
-      <!-- Output Box -->
-      <div class="bg-gray-50 p-4 rounded-md shadow-sm">
-        <h3 class="text-lg font-semibold text-gray-700 mb-2">🧾 Output:</h3>
-        <ul id="output" class="list-disc list-inside text-gray-800 space-y-1"></ul>
-      </div>
-    </div>
+    <button onclick="showNames()" class="bg-indigo-500 hover:bg-indigo-600 text-white font-semibold px-4 py-2 rounded mb-4">
+      Show Names
+    </button>
 
-    <script>
-      let products = [
-        { name: "Pizza", price: 200 },
-        { name: "Burger", price: 100 },
-        { name: "Fries", price: 80 },
-        { name: "Pasta", price: 150 }
-      ];
+    <ul id="output" class="text-left list-disc list-inside text-gray-800 space-y-1"></ul>
+  </div>
+
+  <script>
+    // Sample product array
+    const products = [
+      { name: "Pizza", price: 200 },
+      { name: "Burger", price: 100 },
+      { name: "Fries", price: 80 }
+    ];
+
+    function showNames() {
+      const names = products.map(item => item.name);  // 👈 map() is used here
 
       const output = document.getElementById("output");
+      output.innerHTML = "";  // Clear previous list
 
-      function showList(list) {
-        output.innerHTML = "";
-        list.forEach(item => {
-          const li = document.createElement("li");
-          li.textContent = typeof item === "object" ? `${item.name} - ₹${item.price}` : item;
-          output.appendChild(li);
-        });
-      }
+      names.forEach(name => {
+        const li = document.createElement("li");
+        li.classList.add("bg-red-100", "p-2", "rounded");
+        li.textContent = name;
+        output.appendChild(li);
+      });
+    }
+  </script>
 
-      function useMap() {
-        const names = products.map(p => p.name);
-        showList(names);
-      }
-
-      function useFilter() {
-        const cheap = products.filter(p => p.price < 150);
-        showList(cheap);
-      }
-
-      function useForEach() {
-        let temp = [];
-        products.forEach(p => temp.push(p.name + " ✔️"));
-        showList(temp);
-      }
-
-      function useFind() {
-        const found = products.find(p => p.name === "Pizza");
-        showList([found ? found.name + " found" : "Not found"]);
-      }
-
-      function useIncludes() {
-        const names = products.map(p => p.name);
-        const result = names.includes("Fries");
-        showList([result ? "Fries is in the list" : "Fries not found"]);
-      }
-
-      function usePush() {
-        products.push({ name: "Sandwich", price: 90 });
-        showList(products);
-      }
-
-      function usePop() {
-        products.pop();
-        showList(products);
-      }
-
-      function useSort() {
-        const sorted = [...products].sort((a, b) => a.price - b.price);
-        showList(sorted);
-      }
-    </script>
-
-   
-  </body>
+</body>
 </html>
