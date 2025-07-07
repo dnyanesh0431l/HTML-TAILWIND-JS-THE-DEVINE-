@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-blue-300 flex justify-center items-center h-screen">
+  <div class="bg-slate-950 flex flex-col p-4 rounded-lg">
+    <input disabled class="bg-slate-950 text-slate-100" type="text" name="" id="heading">
+    <div class="grid grid-cols-4 gap-2 mt-2">
+      <div onclick="clear1()" class="bg-slate-300 h-10 w-10 flex items-center justify-center rounded-full">
+        <h1 class="font-bold">AC</h1>
+      </div>
+      <div onclick="backspace()" class="bg-slate-300 h-10 w-10 flex items-center justify-center rounded-full">
+        <h1 class="font-bold">DEL</h1>
+      </div>
+      <div onclick="add('%')" class="bg-slate-300 h-10 w-10 flex items-center justify-center rounded-full">
+        <h1 class="font-bold">%</h1>
+      </div>
+      <div onclick="add('/')" class="bg-slate-300 h-10 w-10 flex items-center justify-center rounded-full">
+        <h1 class="font-bold">/</h1>
+      </div>
+      <div onclick="add('7')" class="bg-slate-300 h-10 w-10 flex items-center justify-center rounded-full">
+        <h1 class="font-bold">7</h1>
+      </div>
+      <div onclick="add('8')" class="bg-slate-300 h-10 w-10 flex items-center justify-center rounded-full">
+        <h1 class="font-bold">8</h1>
+      </div>
+      <div onclick="add('9')" class="bg-slate-300 h-10 w-10 flex items-center justify-center rounded-full">
+        <h1 class="font-bold">9</h1>
+      </div>
+      <div onclick="add('*')" class="bg-slate-300 h-10 w-10 flex items-center justify-center rounded-full">
+        <h1 class="font-bold">*</h1>
+      </div>
+      <div onclick="add('4')" class="bg-slate-300 h-10 w-10 flex items-center justify-center rounded-full">
+        <h1 class="font-bold">4</h1>
+      </div>
+      <div onclick="add('5')" class="bg-slate-300 h-10 w-10 flex items-center justify-center rounded-full">
+        <h1 class="font-bold">5</h1>
+      </div>
+      <div onclick="add('6')" class="bg-slate-300 h-10 w-10 flex items-center justify-center rounded-full">
+        <h1 class="font-bold">6</h1>
+      </div>
+      <div onclick="add('-')" class="bg-slate-300 h-10 w-10 flex items-center justify-center rounded-full">
+        <h1 class="font-bold">-</h1>
+      </div>
+      <div onclick="add('1')" class="bg-slate-300 h-10 w-10 flex items-center justify-center rounded-full">
+        <h1 class="font-bold">1</h1>
+      </div>
+      <div onclick="add('2')" class="bg-slate-300 h-10 w-10 flex items-center justify-center rounded-full">
+        <h1 class="font-bold">2</h1>
+      </div>
+      <div onclick="add('3')" class="bg-slate-300 h-10 w-10 flex items-center justify-center rounded-full">
+        <h1 class="font-bold">3</h1>
+      </div>
+      <div onclick="add('+')" class="bg-slate-300 h-10 w-10 flex items-center justify-center rounded-full">
+        <h1 class="font-bold">+</h1>
+      </div>
+
+    </div>
+    <div class="flex flex-row gap-2 w-full  mt-2">
+      <div class="w-1/2">
+        <div onclick="add('0')" class="bg-slate-300 h-10 w-full flex items-center justify-center rounded-full">
+          <h1 class="font-bold">0</h1>
+        </div>
+
+      </div>
+      <div class="flex flex-row gap-2 w-1/2 ">
+        <div onclick="add('.')" class="bg-slate-300 h-10 w-10 flex items-center justify-center rounded-full">
+          <h1 class="font-bold">.</h1>
+        </div>
+        <div onclick="calculate()" class="bg-slate-300 h-10 w-10 flex items-center justify-center rounded-full">
+          <h1 class="font-bold">=</h1>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</body>
+<script>
+  function add(a) {
+    heading = document.getElementById('heading');
+    heading.value += a;
+
+
+  }
+  function calculate() {
+    let heading = document.getElementById('heading')
+    heading.value = eval(heading.value)
+  }
+  function clear1(){
+    document.getElementById('heading').value = "";  
+  }
+  function backspace(){
+   let heading = document.getElementById('heading'); 
+   heading.value = heading.value.slice(0,-1);
+
+  }
+</script>
+
+</html>
