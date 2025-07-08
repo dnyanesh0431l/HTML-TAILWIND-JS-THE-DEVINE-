@@ -10,61 +10,55 @@
     class="bg-gray-900 text-white min-h-screen flex flex-col items-center justify-center p-6 space-y-4"
   >
     <h1 class="text-3xl font-bold text-white">JavaScript - Date Methods</h1>
-    <button
-      onclick="runDateExamples()"
-      class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded text-white font-semibold"
-    >
-      Run Date Examples (Check Console)
-    </button>
+   
 
     <script>
-      function runDateExamples() {
         console.clear();
 
         const now = new Date();
         console.log("Current Date:", now);
-        now.ge;
-        // 1. toDateString() - readable date string
-        console.log("\n1. toDateString() - Human readable date:");
-        console.log("Result:", now.toDateString());
+        
+        
+        // // 1. toDateString() - readable date string
+        // console.log("\n1. toDateString() - Human readable date:");
+        // console.log("Result:", now.toDateString());
 
-        // 2. toTimeString() - readable time string
-        console.log("\n2. toTimeString() - Human readable time:");
-        console.log("Result:", now.toTimeString());
+        // // 2. toTimeString() - readable time string
+        // console.log("\n2. toTimeString() - Human readable time:");
+        // console.log("Result:", now.toTimeString());
 
         // 3. getFullYear() - get year
-        console.log("\n3. getFullYear() - Year part of the date:");
-        console.log("Result:", now.getFullYear());
+        // console.log("\n3. getFullYear() - Year part of the date:");
+        // console.log("Result:", now.getFullYear());
 
         // 4. getMonth() - get month (0-11)
-        console.log("\n4. getMonth() - Month (0-based, Jan=0):");
-        console.log("Result:", now.getMonth());
+        // console.log("\n4. getMonth() - Month (0-based, Jan=0):");
+        // console.log("Result:", now.getMonth());
 
         // 5. getDate() - get day of the month (1-31)
-        console.log("\n5. getDate() - Day of the month:");
-        console.log("Result:", now.getDate());
+        // console.log("\n5. getDate() - Day of the month:");
+        // console.log("Result:", now.getDate());
 
         // 6. getDay() - day of week (0-6)
-        console.log("\n6. getDay() - Day of the week (0=Sunday):");
-        console.log("Result:", now.getDay());
+        // console.log("\n6. getDay() - Day of the week (0=Sunday):");
+        // console.log("Result:", now.getDay());
 
         // 7. getHours(), getMinutes(), getSeconds()
-        console.log("\n7. Time Parts - Hours, Minutes, Seconds:");
-        console.log("Hours:", now.getHours());
-        console.log("Minutes:", now.getMinutes());
-        console.log("Seconds:", now.getSeconds());
+        // console.log("\n7. Time Parts - Hours, Minutes, Seconds:");
+        // console.log("Hours:", now.getHours());
+        // console.log("Minutes:", now.getMinutes());
+        // console.log("Seconds:", now.getSeconds());
 
-        // 8. toLocaleString() - formatted local string
-        console.log("\n8. toLocaleString() - Locale formatted date & time:");
-        console.log("Result:", now.toLocaleString());
+        // // 8. toLocaleString() - formatted local string
+        // console.log("\n8. toLocaleString() - Locale formatted date & time:");
+        // console.log("Result:", now.toLocaleString());
 
         // Bonus: Creating custom date
-        const customDate = new Date("2025-09-28T10:30:00");
-        console.log("\nBonus - Custom Date:");
-        console.log("Custom Date:", customDate.toString());
+        // const customDate = new Date("2025-09-28T10:30:00");
+        // console.log("\nBonus - Custom Date:");
+        // console.log("Custom Date:", customDate.toString());
 
-        console.log("\nAll major Date methods have been demonstrated.");
-      }
+        // console.log("\nAll major Date methods have been demonstrated.");
     </script>
   </body>
 </html>
