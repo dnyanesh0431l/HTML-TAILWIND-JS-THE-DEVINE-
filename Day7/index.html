@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-200 flex items-center justify-center h-screen">
+    <div
+      class="p-4 bg-white w-52 rounded-lg flex items-center shadow gap-2 flex flex-col"
+    >
+      <h1>To Do list</h1>
+      <input type="text" name="" id="inputtext" class="bg-gray-200" />
+      <button id="addtask" class="bg-green-900 text-white w-full">
+        Add Task
+      </button>
+      <div id="tasklist" class="bg-green-300 p-2 w-full"></div>
+    </div>
+  </body>
+  <script>
+    let addtaskbtn = document.getElementById("addtask");
+    let inputtext = document.getElementById("inputtext");
+    let tasklist = document.getElementById("tasklist");
+
+    addtaskbtn.addEventListener("click", () => {
+      if(inputtext.value !== ""){
+        let el = document.createElement("div");
+      el.innerHTML = inputtext.value;
+      el.classList.add('text-white','bg-green-900','p-2');
+      tasklist.appendChild(el);
+      inputtext.value = ""; 
+      }
+    });
+  </script>
+</html>
