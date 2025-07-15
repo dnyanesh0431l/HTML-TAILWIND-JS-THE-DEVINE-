@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-100 flex flex-col items-center justify-center h-screen">
+    <div class="bg-gray-200 p-6">
+      <h1 class="text-blue-900 font-bold text-center">Contact Form</h1>
+      <form id="contactform" onsubmit="return false">
+        <label for="name">Name</label> <br />
+        <input type="text" name="name" id="name" reqired /><br /><br />
+        <label for="email">Email</label><br />
+        <input type="email" requred name="email" id="email" /><br />
+        <br />
+        <label for="message">message</label><br />
+        <textarea name="message" id="message"></textarea> <br /><br />
+        <button
+             onclick="submitbtn()"
+             
+
+          class="bg-green-300 text-green-900 w-full"
+          type="submit"
+        >
+          Submit
+        </button>
+      </form>
+    </div>
+<div id="result" class="h-screen hidden w-screen fixed backdrop-blur-sm  bg-gray-900/10 flex flex-col gap-6 items-center justify-center">
+  <div class="flex flex-col gap-6 p-4 bg-gray-500">
+      <h1 id="resultname" class="text-2xl font-bold text-white"></h1>
+    <h1 id="resultemail" class="text-2xl font-bold text-white"></h1>
+    <h1 id="resultmsg" class="text-2xl font-bold text-white"></h1>
+  </div>
+
+</div>
+    
+  </body>
+  <script>
+    function submitbtn(){
+        let form = document.getElementById("contactform");
+        let name = document.getElementById("name").value;
+        let email = document.getElementById("email").value;
+        let message = document.getElementById("message").value;
+        console.log(name,email,message)
+        form.reset();
+        let result = document.getElementById("result");
+        let resultname = document.getElementById("resultname");
+        let resultemail = document.getElementById("resultemail");
+        let resultmsg = document.getElementById("resultmsg");
+        result.classList.remove("hidden");
+        resultname.innerHTML = name;
+        resultemail.innerHTML = email;
+        resultmsg.innerHTML = message;
+  
+
+        
+    }
+   
+  </script>
+</html>
