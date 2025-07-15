@@ -1,63 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-  </head>
-  <body class="bg-gray-100 flex flex-col items-center justify-center h-screen">
-    <div class="bg-gray-200 p-6">
-      <h1 class="text-blue-900 font-bold text-center">Contact Form</h1>
-      <form id="contactform" onsubmit="return false">
-        <label for="name">Name</label> <br />
-        <input type="text" name="name" id="name" reqired /><br /><br />
-        <label for="email">Email</label><br />
-        <input type="email" requred name="email" id="email" /><br />
-        <br />
-        <label for="message">message</label><br />
-        <textarea name="message" id="message"></textarea> <br /><br />
-        <button
-             onclick="submitbtn()"
-             
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <script src="https://cdn.tailwindcss.com"> </script>
+</head>
+<body class="bg-gray-100 flex flex-col justify-center items-center h-screen">
+    <div class="p-4 bg-gray-200 w-64 rounded-lg shadow">
+        <h1 class="text-center  text-blue-900 font-bold">Contact form</h1>
+        <form id="contactform" onsubmit="return false">
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email">
+            <label for="message">Message</label>
+            <textarea name="message" id="message"></textarea>
+            <button type="submit" onclick="submitForm()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full">Submit</button>
 
-          class="bg-green-300 text-green-900 w-full"
-          type="submit"
-        >
-          Submit
-        </button>
-      </form>
+        </form>
     </div>
-<div id="result" class="h-screen hidden w-screen fixed backdrop-blur-sm  bg-gray-900/10 flex flex-col gap-6 items-center justify-center">
-  <div class="flex flex-col gap-6 p-4 bg-gray-500">
-      <h1 id="resultname" class="text-2xl font-bold text-white"></h1>
-    <h1 id="resultemail" class="text-2xl font-bold text-white"></h1>
-    <h1 id="resultmsg" class="text-2xl font-bold text-white"></h1>
-  </div>
+    <div id="result" class="p-4 hidden backdrop-blur-sm bg-green-900/40 h-screen w-screen fixed flex items-center justify-center ">
+        <div class="p-10 bg-green-300 flex flex-col gap-2 rounded-lg">
+            <h1 class="text-center text-blue-900 font-bold">Contact Details</h1>
+            <h1 id="resultname"></h1>
+            <h1 id="resultemail"></h1>
+            <h1 id="resultmessage"></h1>
+        <div class="flex">
+            <p class="w-1/2"></p>
+            <p class="bg-red-500 hover:bg-red-700 text-white font-bold p-1 rounded w-1/2" onclick="closepopup()">Cancel</p>
+        </div>
 
-</div>
-    
-  </body>
-  <script>
-    function submitbtn(){
-        let form = document.getElementById("contactform");
-        let name = document.getElementById("name").value;
-        let email = document.getElementById("email").value;
-        let message = document.getElementById("message").value;
-        console.log(name,email,message)
-        form.reset();
-        let result = document.getElementById("result");
-        let resultname = document.getElementById("resultname");
-        let resultemail = document.getElementById("resultemail");
-        let resultmsg = document.getElementById("resultmsg");
-        result.classList.remove("hidden");
-        resultname.innerHTML = name;
-        resultemail.innerHTML = email;
-        resultmsg.innerHTML = message;
-  
+        </div>
+    </div>
+</body>
+<script>
+    function submitForm(){
+        let name = document.getElementById('name').value;
+        let email = document.getElementById('email').value;
+        let message = document.getElementById('message').value;
+        let forms  = document.getElementById('contactform');
+        forms.reset();
+        let result = document.getElementById('result');
+        result.classList.remove('hidden');
+        let resultname = document.getElementById('resultname');
+        let resultemail = document.getElementById('resultemail');
+        let resultmessage = document.getElementById('resultmessage');
+        resultname.innerHTML = `Name: ${name}`;
+        resultemail.innerHTML = `Email: ${email}`;
+        resultmessage.innerHTML = `Message: ${message}`;
 
-        
+
+
     }
-   
-  </script>
+    function closepopup(){
+        let result = document.getElementById('result');
+        result.classList.add('hidden');
+    }
+</script>
+
 </html>
